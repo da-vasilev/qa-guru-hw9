@@ -22,7 +22,7 @@ public class PracticeFormPage {
         $(String.format(".react-datepicker__day--0%s", testData.getDateOfBirth()[0])).click();
         $("#subjectsInput").setValue("English").pressEnter();
         $x("//label[contains(., 'Sports')]").click();
-        $("#uploadPicture").uploadFromClasspath("starPhoto.jpg");
+//        $("#uploadPicture").uploadFromClasspath("starPhoto.jpg");
         $("#currentAddress").setValue(testData.getCurrentAddress());
         $("#state #react-select-3-input").setValue("NCR").pressEnter();
         $("#city #react-select-4-input").setValue("Delhi").pressEnter();
