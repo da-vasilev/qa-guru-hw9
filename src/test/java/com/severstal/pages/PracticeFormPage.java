@@ -1,22 +1,16 @@
 package com.severstal.pages;
 
 import com.severstal.TestData;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-/**
- * <b>Page Practice Form web site Demoqa</b>
- * @author da.vasilev
- */
 public class PracticeFormPage {
 
-    /**
-     *  <b>Fills out the form on the page</b>
-     * @return this
-     */
-    public PracticeFormPage setStudentRegistrationForm(TestData testData) {
+    @Step("Заполнить поля на странице Demoqa")
+    public PracticeFormPage fillStudentRegistrationForm(TestData testData) {
         $("#firstName").setValue(testData.getFirstName());
         $("#lastName").setValue(testData.getLastName());
         $("#userEmail").setValue(testData.getUserEmail());
@@ -37,10 +31,7 @@ public class PracticeFormPage {
         return this;
     }
 
-    /**
-     *  <b>Validates the form on the page</b>
-     * @return this
-     */
+    @Step("Проверить поля на странице Demoqa")
     public PracticeFormPage checkStudentRegistrationForm(TestData testData) {
         $(".table").shouldHave(
                 text("Thanks for submitting the form"),

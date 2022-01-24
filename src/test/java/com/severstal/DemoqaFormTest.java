@@ -1,12 +1,12 @@
 package com.severstal;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.github.javafaker.Faker;
+import com.severstal.helpers.Attachments;
 import com.severstal.pages.PracticeFormPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -31,14 +31,19 @@ public class DemoqaFormTest {
     }
 
     @Test
-    void fillStudentRegistrationForm () {
+    @DisplayName("Тестирование формы PracticeForm")
+    void fillFormTest () {
         new PracticeFormPage()
-                .setStudentRegistrationForm(testData)
+                .fillStudentRegistrationForm(testData)
                 .checkStudentRegistrationForm(testData);
     }
 
     @AfterAll
     static void AfterAll() {
+        Attachments.screenshotAs("Last screenshot");
+        Attachments.pageSource();
+        Attachments.browserConsoleLogs();
+        Attachments.addVideo();
         closeWebDriver();
     }
 }
