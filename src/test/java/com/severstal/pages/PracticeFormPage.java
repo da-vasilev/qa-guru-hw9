@@ -45,7 +45,6 @@ public class PracticeFormPage {
                         testData.getDateOfBirth()[2])),
                 text("English"),
                 text("Sports"),
-                text("starPhoto.jpg"),
                 text(testData.getCurrentAddress()),
                 text("NCR Delhi")
         );
