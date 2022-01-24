@@ -33,7 +33,7 @@ public class PracticeFormPage {
 
     @Step("Проверить поля на странице Demoqa")
     public PracticeFormPage checkStudentRegistrationForm(TestData testData) {
-        $(".table").shouldHave(
+        $(".modal-content").shouldHave(
                 text("Thanks for submitting the form"),
                 text(String.format("%s %s", testData.getFirstName(), testData.getLastName())),
                 text(testData.getUserEmail()),
